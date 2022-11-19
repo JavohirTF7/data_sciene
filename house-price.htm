@@ -1,0 +1,242 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>house price | Kaggle</title>
+  <meta charset="utf-8" />
+    <meta name="robots" content="index, follow" />
+  <meta name="description" content="Explore and run machine learning code with Kaggle Notebooks | Using data from House Prices - Advanced Regression Techniques" />
+  <meta name="turbolinks-cache-control" content="no-cache" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
+  <meta name="theme-color" content="#008ABC" />
+  <script nonce="Fkc46lXSp1XMU/qdga0KiA==" type="text/javascript">
+    window["pageRequestStartTime"] = 1668835485813;
+    window["pageRequestEndTime"] = 1668835486037;
+    window["initialPageLoadStartTime"] = new Date().getTime();
+  </script>
+  <link rel="preconnect" href="https://www.google-analytics.com" crossorigin="anonymous" /><link rel="preconnect" href="https://stats.g.doubleclick.net" /><link rel="preconnect" href="https://storage.googleapis.com" /><link rel="preconnect" href="https://apis.google.com" />
+  <link href="/static/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+  <link rel="manifest" href="/static/json/manifest.json" crossorigin="use-credentials">
+
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/icon?family=Google+Material+Icons"
+    rel="preload" as="style" />
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,400i,500,500i,600,600i,700,700i"
+    rel="preload" as="style" />
+  <link href="https://fonts.googleapis.com/icon?family=Google+Material+Icons"
+    rel="stylesheet" media="print" id="async-google-font-1" />
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet" media="print" id="async-google-font-2" />
+  <script nonce="Fkc46lXSp1XMU/qdga0KiA==" type="text/javascript">
+    const styleSheetIds = ["async-google-font-1", "async-google-font-2"];
+    styleSheetIds.forEach(function (id) {
+      document.getElementById(id).addEventListener("load", function() {
+        this.media = "all";
+      });
+    });
+  </script>
+
+    <link rel="canonical" href="/code/javohirtoshqorgonov/house-price" />
+    <link rel="stylesheet" type="text/css" href="/static/assets/vendor.css?v=85d731a494547753f1bf" />
+    <link rel="stylesheet" type="text/css" href="/static/assets/app.css?v=3016113948617e0598c0" />
+  
+    
+ 
+      <script nonce="Fkc46lXSp1XMU/qdga0KiA==">
+        try{(function(a,s,y,n,c,h,i,d,e){d=s.createElement("style");
+        d.appendChild(s.createTextNode(""));s.head.appendChild(d);d=d.sheet;
+        y=y.map(x => d.insertRule(x + "{ opacity: 0 !important }"));
+        h.start=1*new Date;h.end=i=function(){y.forEach(x => x<d.cssRules.length ? d.deleteRule(x) : {})};
+        (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+        })(window,document,['.site-header-react__nav'],'dataLayer',2000,{'GTM-52LNT9S':true});}catch(ex){}
+    </script>
+    <script nonce="Fkc46lXSp1XMU/qdga0KiA==">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-12629138-1', {
+            'optimize_id': 'GTM-52LNT9S',
+            'displayFeaturesTask': null,
+            'send_page_view': false,
+            'content_group1': 'Notebooks'
+        });
+    </script>
+    <script nonce="Fkc46lXSp1XMU/qdga0KiA==" async src="https://www.googletagmanager.com/gtag/js?id=UA-12629138-1"></script>
+
+  
+    
+    <meta name="og:url" content="https://kaggle.com/code/javohirtoshqorgonov/house-price" />
+    <meta property="og:title" content="house price" />
+    <meta property="og:description" content="Explore and run machine learning code with Kaggle Notebooks | Using data from House Prices - Advanced Regression Techniques" />
+    <meta property="og:type" content="website" />
+    <meta name="og:image" content="https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@kaggledatasets" />
+
+
+  <meta name="twitter:site" content="@Kaggle" /> 
+  
+    
+    <script nonce="Fkc46lXSp1XMU/qdga0KiA==" type="application/ld+json">{"@context":"http://schema.org/","@type":"Article","author":{"@type":"Person","name":"javohirtoshqorgonov","sameAs":"/javohirtoshqorgonov"},"headline":"house price","url":"https://www.kaggle.com/code/javohirtoshqorgonov/house-price","dateModified":"2022-11-19T05:10:56.54Z","datePublished":"2022-11-19T05:10:56.54Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.kaggle.com/code/javohirtoshqorgonov/house-price"},"publisher":{"@type":"Organization","name":"Kaggle","sameAs":"https://www.kaggle.com","logo":{"type":"ImageObject","url":"https://www.kaggle.com/static/images/site-logo.png"}},"image":["https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png"]}</script>
+
+
+  
+    
+        <link rel="alternate" type="application/json+oembed"
+          href="https://www.kaggle.com/oembed/kernel?url=https%3A%2F%2Fwww.kaggle.com%2Fcode%2Fjavohirtoshqorgonov%2Fhouse-price%3FscriptVersionId%3D111433538"
+          title="house price" />
+
+
+  
+    
+    
+<script nonce="Fkc46lXSp1XMU/qdga0KiA==" type="text/javascript">
+    var Kaggle = window.Kaggle || {};
+
+    Kaggle.Current = {
+        userId: 10918030,
+        userProfileUrl: '/javohirtoshqorgonov',
+        userDisplayNameEscaped: 'Javohir Toshqorgonov',
+        userThumbnailUrl: 'https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png',
+        userEmailEscaped: 'javohirtoshqorgonov@gmail.com',
+        userIsPhoneVerified: true,
+        userName: 'javohirtoshqorgonov',
+        tier: 'Contributor',
+        antiForgeryToken: 'CfDJ8Gm7kp8NARJBjtS2astAKvRREBubV0X9UFpmS9IT6V-2vJaPnB6VqNZr8b2j0nvqi7Li6pdF2ryiHa9hIercLxfLKZ4DCax-qUABfyiu0YHYP1AITCj-QvDe63S3FbsFfXKGpsepVVhPFkLUVW_w-qU',
+        isAnonymous: false,
+        analyticsToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Njg4MzYzODYsIlVzZXJJZCI6MTA5MTgwMzB9.qq1q3Ro5WJOo__HSxrv1fnEayvocyb1fqBRNAOC50b4',
+        analyticsTokenExpiry: 15,
+        
+        
+        
+        
+        
+        
+        
+        registeredTimestamp: 1656263377,
+    }
+        Kaggle.Current.log = function(){};
+        Kaggle.Current.warn = function(){};
+
+    const decodeUserProperty = function (escapedUserProperty) {
+        escapedUserProperty = escapedUserProperty || "";
+        try {
+            const textVersion = new DOMParser().parseFromString(escapedUserProperty, "text/html").documentElement.textContent;
+            if (textVersion) {
+                return textVersion;
+            }
+        } catch(ex) {}
+        return escapedUserProperty;
+    }
+    Kaggle.Current.userDisplayName = decodeUserProperty(Kaggle.Current.userDisplayNameEscaped);
+    Kaggle.Current.userEmail = decodeUserProperty(Kaggle.Current.userEmailEscaped); 
+</script>
+
+    
+
+<script nonce="Fkc46lXSp1XMU/qdga0KiA==" type="text/javascript">
+    var Kaggle = window.Kaggle || {};
+    Kaggle.PageMessages = [];
+</script>
+
+
+
+    <script nonce="Fkc46lXSp1XMU/qdga0KiA==">window['useKaggleAnalytics'] = true;</script>
+
+  <script id="gapi-target" nonce="Fkc46lXSp1XMU/qdga0KiA==" src="https://apis.google.com/js/api.js" defer
+    async></script>
+  <script nonce="Fkc46lXSp1XMU/qdga0KiA==" src="/static/assets/runtime.js?v=66189e96d7795c4820a5" data-turbolinks-track="reload"></script>
+  <script nonce="Fkc46lXSp1XMU/qdga0KiA==" src="/static/assets/vendor.js?v=7357fda0a7a62b62514d" data-turbolinks-track="reload"></script>
+  <script nonce="Fkc46lXSp1XMU/qdga0KiA==" src="/static/assets/app.js?v=f7698a61785424b9b5e7" data-turbolinks-track="reload"></script>
+    <script nonce="Fkc46lXSp1XMU/qdga0KiA==" type="text/javascript">
+      window.kaggleStackdriverConfig = {
+        key: 'AIzaSyA4eNqUdRRskJsCZWVz-qL655Xa5JEMreE',
+        projectId: 'kaggle-161607',
+        service: 'web-fe',
+        version: 'ci',
+        userId: '10918030'
+      }
+    </script>
+</head>
+
+<body data-turbolinks="false">
+  <main>
+    
+
+
+
+
+
+
+<div id="site-container"></div>
+<div data-component-name="NavigationContainer" style="display: flex; flex-direction: column; flex: 1 0 auto;"></div><script class="kaggle-component" nonce="Fkc46lXSp1XMU/qdga0KiA==">var Kaggle=window.Kaggle||{};Kaggle.State=Kaggle.State||[];Kaggle.State.push({"navigationType":"BOTH_NAV"});performance && performance.mark && performance.mark("NavigationContainer.componentCouldBootstrap");</script>
+<div id="site-body" class="hide">
+    
+
+
+
+
+<div data-component-name="KernelViewerMaterialContainer" style="display: flex; flex-direction: column; flex: 1 0 auto;"></div><script class="kaggle-component" nonce="Fkc46lXSp1XMU/qdga0KiA==">var Kaggle=window.Kaggle||{};Kaggle.State=Kaggle.State||[];Kaggle.State.push({"kernel":{"id":32251001,"title":"house price","currentRunId":111433538,"mostRecentRunId":111433538,"url":"/code/javohirtoshqorgonov/house-price","upvoteCount":1,"viewCount":5,"author":{"id":10918030,"displayName":"Javohir Toshqorgonov","userName":"javohirtoshqorgonov","thumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","profileUrl":"/javohirtoshqorgonov","performanceTier":"CONTRIBUTOR"},"updatedTime":"2022-11-19T05:10:56.540Z","selfLink":"/kernels/32251001","dockerImagePinningType":"DOCKER_IMAGE_PINNING_TYPE_ORIGINAL","originalDockerImageId":30301,"slug":"house-price","canToggleVisibility":true},"kernelRun":{"id":111433538,"kernelId":32251001,"status":"COMPLETE","kernelVersionType":"BATCH","sourceType":"EDITOR_TYPE_NOTEBOOK","language":"LANGUAGE_PYTHON","title":"house price","dateCreated":"2022-11-19T05:10:52.717Z","dateEvaluated":"2022-11-19T05:10:56.540Z","workerUptimeSeconds":336,"workerIpAddress":"172.23.66.17   ","workerIpAddressExternal":"35.221.193.22  ","scriptLanguageId":9,"scriptLanguageName":"IPython Notebook HTML","renderedOutputUrl":"https://www.kaggleusercontent.com/kf/111433538/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..hizu9RiTwWMo8Ec6ylaI1g.F188xNhNKP4gqaOrYBPJ32zd8R4XQTPblTkP7-BiLeovCR5jkwTMotoSkY_dCeZ1t4FAdxcFeIjSnGdJOV3sGjFSnOiBuAfBEMNc7s1SFo77ao9FWgj6AOvh5wgDjxZREzWp8yqpZYV2pjiWcL9N7e0jenlfyuH7iH0dR3fsn6ZAOTtiB3EkvzkCuH4kzCdykY5a2hkBKRVMGQACuQ9_L3zgyr5ItJKQGv0l3ckiDwqAlkri32YiuXZVvG71cYs4uPBnvcmLKNeFqmUSXQFDDWXO8mNHCPiJSzlJTXryUs8uBaggNnu8qnOhpfdTravLrE3HxKWr0vX4SQXGt4B_ZqdMb3G6yGOv3wtksq6ObTX2XfGDXu_RBVU5EYBCMQDHWfq9mTkutQLSMpq380szMtjiSZMioGZ02kXeJQeqz9AXxcfhYRpokgbBmCgwQgVrya_KGGkSiP54FDngyv1_UDegtndc2Cz5hDgqlbnCxUb1hXMuNqGgFP6LmMdKk99yGdK1yAw5N7rCPE7pvC28BSUR3SODFNdPNEzS3dOpn0MsTtA03POkUr8W5JNlEB-1Om3KMc_vAipVFi0sgBq2GHu8Od8rSi8HLc8_aC0DXW7j4oW-91ilJE5VMGeBbsMGmTgh_S0D8xBW3KWzeitwNgBCgThehFzF44z147IVwCE.KkwP3QSkq3ZB0QUxUrdcIA/__resultx__.html?sharingControls=true","isolatorResults":"\u003Cresults\u003E\u003Cdockerfile_url\u003Egcr.io/kaggle-images/python@sha256:b6e76e491faf320ee0199256d68e26763370b8fd5a86b19b4780ea9b306d85cf\u003C/dockerfile_url\u003E\u003Cdocker_image_digest\u003Eb6e76e491faf320ee0199256d68e26763370b8fd5a86b19b4780ea9b306d85cf\u003C/docker_image_digest\u003E\u003Cdocker_image_id\u003Esha256:82b8af744dda536c89f33031ba085a3a5370bb3d8fff8670ac6de1c5b8972330\u003C/docker_image_id\u003E\u003Cdocker_image_name\u003Egcr.io/kaggle-images/python@sha256:b6e76e491faf320ee0199256d68e26763370b8fd5a86b19b4780ea9b306d85cf\u003C/docker_image_name\u003E\u003Cexit_code\u003E0\u003C/exit_code\u003E\u003Coutput_size_bytes\u003E954772\u003C/output_size_bytes\u003E\u003Crun_time_seconds\u003E25.2202456\u003C/run_time_seconds\u003E\u003Cused_all_space\u003Efalse\u003C/used_all_space\u003E\u003Ctimeout_exceeded\u003Efalse\u003C/timeout_exceeded\u003E\u003Cout_of_memory\u003Efalse\u003C/out_of_memory\u003E\u003Cinvalid_path_errors\u003Efalse\u003C/invalid_path_errors\u003E\u003Csucceeded\u003Etrue\u003C/succeeded\u003E\u003Cwas_killed\u003Efalse\u003C/was_killed\u003E\u003C/results\u003E","runInfo":{"dockerfileUrl":"https://github.com/Kaggle/docker-python/blob/main/Dockerfile.tmpl","dockerHubUrl":"https://gcr.io/kaggle-images/python@sha256:b6e76e491faf320ee0199256d68e26763370b8fd5a86b19b4780ea9b306d85cf","dockerImageDigest":"b6e76e491faf320ee0199256d68e26763370b8fd5a86b19b4780ea9b306d85cf","dockerImageId":"sha256:82b8af744dda536c89f33031ba085a3a5370bb3d8fff8670ac6de1c5b8972330","dockerImageName":"gcr.io/kaggle-images/python@sha256:b6e76e491faf320ee0199256d68e26763370b8fd5a86b19b4780ea9b306d85cf","outputSizeBytes":954772,"runTimeSeconds":25.2202456,"succeeded":true},"dockerImageVersionId":30301,"dataSources":[{"sourceId":5407,"databundleVersionId":868283,"mountSlug":"house-prices-advanced-regression-techniques"}],"useNewKernelsBackend":true,"isInternetEnabled":true,"userPlan":"USER_PLAN_FREE"},"author":{"id":10918030,"displayName":"Javohir Toshqorgonov","userName":"javohirtoshqorgonov","thumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","profileUrl":"/javohirtoshqorgonov","performanceTier":"CONTRIBUTOR"},"baseUrl":"/code/javohirtoshqorgonov/house-price","collaborators":{"owner":{"userId":10918030,"profileUrl":"/javohirtoshqorgonov","thumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","name":"Javohir Toshqorgonov","slug":"javohirtoshqorgonov","userTier":"CONTRIBUTOR","type":"OWNER"}},"initialTab":"","log":"[{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:10.806009926,\u0022data\u0022:\u0022/kaggle/input/house-prices-advanced-regression-techniques/sample_submission.csv\\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:10.806076774,\u0022data\u0022:\u0022/kaggle/input/house-prices-advanced-regression-techniques/data_description.txt\\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:10.806089345,\u0022data\u0022:\u0022/kaggle/input/house-prices-advanced-regression-techniques/train.csv\\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:10.806096568,\u0022data\u0022:\u0022/kaggle/input/house-prices-advanced-regression-techniques/test.csv\\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.423686741,\u0022data\u0022:\u0022\\u003cclass \u0027pandas.core.frame.DataFrame\u0027\\u003e\\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.423812661,\u0022data\u0022:\u0022RangeIndex: 1460 entries, 0 to 1459\\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.423841742,\u0022data\u0022:\u0022Data columns (total 81 columns):\\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.423850619,\u0022data\u0022:\u0022 #   Column         Non-Null Count  Dtype  \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.423858151,\u0022data\u0022:\u0022---  ------         --------------  -----  \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.423865348,\u0022data\u0022:\u0022 0   Id             1460 non-null   int64  \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.4238723,\u0022data\u0022:\u0022 1   MSSubClass     1460 non-null   int64  \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.423878951,\u0022data\u0022:\u0022 2   MSZoning       1460 non-null   object \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.423885248,\u0022data\u0022:\u0022 3   LotFrontage    1201 non-null   float64\\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.42389168,\u0022data\u0022:\u0022 4   LotArea        1460 non-null   int64  \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.423898225,\u0022data\u0022:\u0022 5   Street         1460 non-null   object \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.423904647,\u0022data\u0022:\u0022 6   Alley          91 non-null     object \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.423910792,\u0022data\u0022:\u0022 7   LotShape       1460 non-null   object \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.423917155,\u0022data\u0022:\u0022 8   LandContour    1460 non-null   object \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.423923133,\u0022data\u0022:\u0022 9   Utilities      1460 non-null   object \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.423929172,\u0022data\u0022:\u0022 10  LotConfig      1460 non-null   object \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.423935367,\u0022data\u0022:\u0022 11  LandSlope      1460 non-null   object \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.423942019,\u0022data\u0022:\u0022 12  Neighborhood   1460 non-null   object \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.423948068,\u0022data\u0022:\u0022 13  Condition1     1460 non-null   object \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.423954322,\u0022data\u0022:\u0022 14  Condition2     1460 non-null   object \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.423960348,\u0022data\u0022:\u0022 15  BldgType       1460 non-null   object \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.423966704,\u0022data\u0022:\u0022 16  HouseStyle     1460 non-null   object \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.423972801,\u0022data\u0022:\u0022 17  OverallQual    1460 non-null   int64  \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.42397898,\u0022data\u0022:\u0022 18  OverallCond    1460 non-null   int64  \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.423985205,\u0022data\u0022:\u0022 19  YearBuilt      1460 non-null   int64  \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.423991374,\u0022data\u0022:\u0022 20  YearRemodAdd   1460 non-null   int64  \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.423997402,\u0022data\u0022:\u0022 21  RoofStyle      1460 non-null   object \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424003998,\u0022data\u0022:\u0022 22  RoofMatl       1460 non-null   object \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424010549,\u0022data\u0022:\u0022 23  Exterior1st    1460 non-null   object \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424016909,\u0022data\u0022:\u0022 24  Exterior2nd    1460 non-null   object \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424023002,\u0022data\u0022:\u0022 25  MasVnrType     1452 non-null   object \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424029206,\u0022data\u0022:\u0022 26  MasVnrArea     1452 non-null   float64\\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424047535,\u0022data\u0022:\u0022 27  ExterQual      1460 non-null   object \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424053817,\u0022data\u0022:\u0022 28  ExterCond      1460 non-null   object \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424059893,\u0022data\u0022:\u0022 29  Foundation     1460 non-null   object \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.42406601,\u0022data\u0022:\u0022 30  BsmtQual       1423 non-null   object \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424072294,\u0022data\u0022:\u0022 31  BsmtCond       1423 non-null   object \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424079027,\u0022data\u0022:\u0022 32  BsmtExposure   1422 non-null   object \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424085052,\u0022data\u0022:\u0022 33  BsmtFinType1   1423 non-null   object \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424091092,\u0022data\u0022:\u0022 34  BsmtFinSF1     1460 non-null   int64  \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424097164,\u0022data\u0022:\u0022 35  BsmtFinType2   1422 non-null   object \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424103394,\u0022data\u0022:\u0022 36  BsmtFinSF2     1460 non-null   int64  \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424109545,\u0022data\u0022:\u0022 37  BsmtUnfSF      1460 non-null   int64  \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424115632,\u0022data\u0022:\u0022 38  TotalBsmtSF    1460 non-null   int64  \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424121762,\u0022data\u0022:\u0022 39  Heating        1460 non-null   object \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.42412849,\u0022data\u0022:\u0022 40  HeatingQC      1460 non-null   object \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424134712,\u0022data\u0022:\u0022 41  CentralAir     1460 non-null   object \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.42414347,\u0022data\u0022:\u0022 42  Electrical     1459 non-null   object \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424149506,\u0022data\u0022:\u0022 43  1stFlrSF       1460 non-null   int64  \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424155557,\u0022data\u0022:\u0022 44  2ndFlrSF       1460 non-null   int64  \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.42416217,\u0022data\u0022:\u0022 45  LowQualFinSF   1460 non-null   int64  \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424168094,\u0022data\u0022:\u0022 46  GrLivArea      1460 non-null   int64  \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424174087,\u0022data\u0022:\u0022 47  BsmtFullBath   1460 non-null   int64  \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424180072,\u0022data\u0022:\u0022 48  BsmtHalfBath   1460 non-null   int64  \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424186613,\u0022data\u0022:\u0022 49  FullBath       1460 non-null   int64  \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424192636,\u0022data\u0022:\u0022 50  HalfBath       1460 non-null   int64  \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424198747,\u0022data\u0022:\u0022 51  BedroomAbvGr   1460 non-null   int64  \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424204748,\u0022data\u0022:\u0022 52  KitchenAbvGr   1460 non-null   int64  \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424210933,\u0022data\u0022:\u0022 53  KitchenQual    1460 non-null   object \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424217062,\u0022data\u0022:\u0022 54  TotRmsAbvGrd   1460 non-null   int64  \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424223281,\u0022data\u0022:\u0022 55  Functional     1460 non-null   object \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424229412,\u0022data\u0022:\u0022 56  Fireplaces     1460 non-null   int64  \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424235987,\u0022data\u0022:\u0022 57  FireplaceQu    770 non-null    object \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424242483,\u0022data\u0022:\u0022 58  GarageType     1379 non-null   object \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424248459,\u0022data\u0022:\u0022 59  GarageYrBlt    1379 non-null   float64\\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424254531,\u0022data\u0022:\u0022 60  GarageFinish   1379 non-null   object \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424260612,\u0022data\u0022:\u0022 61  GarageCars     1460 non-null   int64  \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424266451,\u0022data\u0022:\u0022 62  GarageArea     1460 non-null   int64  \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424277693,\u0022data\u0022:\u0022 63  GarageQual     1379 non-null   object \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424283985,\u0022data\u0022:\u0022 64  GarageCond     1379 non-null   object \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424290006,\u0022data\u0022:\u0022 65  PavedDrive     1460 non-null   object \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424296777,\u0022data\u0022:\u0022 66  WoodDeckSF     1460 non-null   int64  \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424302784,\u0022data\u0022:\u0022 67  OpenPorchSF    1460 non-null   int64  \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424309184,\u0022data\u0022:\u0022 68  EnclosedPorch  1460 non-null   int64  \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424315401,\u0022data\u0022:\u0022 69  3SsnPorch      1460 non-null   int64  \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424321504,\u0022data\u0022:\u0022 70  ScreenPorch    1460 non-null   int64  \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424327389,\u0022data\u0022:\u0022 71  PoolArea       1460 non-null   int64  \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.42433384,\u0022data\u0022:\u0022 72  PoolQC         7 non-null      object \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424339781,\u0022data\u0022:\u0022 73  Fence          281 non-null    object \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424346443,\u0022data\u0022:\u0022 74  MiscFeature    54 non-null     object \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424352573,\u0022data\u0022:\u0022 75  MiscVal        1460 non-null   int64  \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424358516,\u0022data\u0022:\u0022 76  MoSold         1460 non-null   int64  \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424364905000001,\u0022data\u0022:\u0022 77  YrSold         1460 non-null   int64  \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424371128,\u0022data\u0022:\u0022 78  SaleType       1460 non-null   object \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424377197,\u0022data\u0022:\u0022 79  SaleCondition  1460 non-null   object \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424383384,\u0022data\u0022:\u0022 80  SalePrice      1460 non-null   int64  \\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424389455,\u0022data\u0022:\u0022dtypes: float64(3), int64(35), object(43)\\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:13.424395518,\u0022data\u0022:\u0022memory usage: 924.0\u002B KB\\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:15.259290056,\u0022data\u0022:\u0022(1460, 81)\\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:15.259381164,\u0022data\u0022:\u0022(1459, 80)\\n\u0022}\n,{\u0022stream_name\u0022:\u0022stdout\u0022,\u0022time\u0022:15.259431806,\u0022data\u0022:\u0022(1459, 2)\\n\u0022}\n,{\u0022stream_name\u0022:\u0022stderr\u0022,\u0022time\u0022:20.854982451,\u0022data\u0022:\u0022/opt/conda/lib/python3.7/site-packages/traitlets/traitlets.py:2758: FutureWarning: --Exporter.preprocessors=[\\\u0022remove_papermill_header.RemovePapermillHeader\\\u0022] for containers is deprecated in traitlets 5.0. You can pass \u0060--Exporter.preprocessors item\u0060 ... multiple times to add items to a list.\\n\u0022}\n,{\u0022stream_name\u0022:\u0022stderr\u0022,\u0022time\u0022:20.85522921,\u0022data\u0022:\u0022  FutureWarning,\\n\u0022}\n,{\u0022stream_name\u0022:\u0022stderr\u0022,\u0022time\u0022:20.856667434,\u0022data\u0022:\u0022[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\\n\u0022}\n,{\u0022stream_name\u0022:\u0022stderr\u0022,\u0022time\u0022:21.206690626,\u0022data\u0022:\u0022[NbConvertApp] Writing 265080 bytes to __notebook__.ipynb\\n\u0022}\n,{\u0022stream_name\u0022:\u0022stderr\u0022,\u0022time\u0022:24.033556649,\u0022data\u0022:\u0022/opt/conda/lib/python3.7/site-packages/traitlets/traitlets.py:2758: FutureWarning: --Exporter.preprocessors=[\\\u0022nbconvert.preprocessors.ExtractOutputPreprocessor\\\u0022] for containers is deprecated in traitlets 5.0. You can pass \u0060--Exporter.preprocessors item\u0060 ... multiple times to add items to a list.\\n\u0022}\n,{\u0022stream_name\u0022:\u0022stderr\u0022,\u0022time\u0022:24.033628034,\u0022data\u0022:\u0022  FutureWarning,\\n\u0022}\n,{\u0022stream_name\u0022:\u0022stderr\u0022,\u0022time\u0022:24.033645229,\u0022data\u0022:\u0022[NbConvertApp] Converting notebook __notebook__.ipynb to html\\n\u0022}\n,{\u0022stream_name\u0022:\u0022stderr\u0022,\u0022time\u0022:25.048378153,\u0022data\u0022:\u0022[NbConvertApp] Support files will be in __results___files/\\n\u0022}\n,{\u0022stream_name\u0022:\u0022stderr\u0022,\u0022time\u0022:25.048444986,\u0022data\u0022:\u0022[NbConvertApp] Making directory __results___files\\n\u0022}\n,{\u0022stream_name\u0022:\u0022stderr\u0022,\u0022time\u0022:25.04892338,\u0022data\u0022:\u0022[NbConvertApp] Writing 390283 bytes to __results__.html\\n\u0022}\n]","outputFiles":[{"kernelSessionId":111433538,"kernelId":32251001,"name":"test_df.csv","contentLength":493789,"fullPath":"test_df.csv","downloadUrl":"https://www.kaggleusercontent.com/kf/111433538/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..etDqqdqcoNRW9KHsfoWswA.robv7ixiwzoWhCdJCZ6fotCzNli2mfEVuBLyqMly_v9qiagc9Dq6uPBFK1yt0U_BrFezwukHHU03bYjPGDfF0P0BPvelprlpbN57dsiaqe0rZUmdunQ74v_S8bYVR-r0-WIdwI6TZYdw1EG27X9nXr1TWvRmnfc1HMh9XUSoUWSIoTrIc75ro43eMOWrQdWNe11u5sJfeycuXza0Z4fNZ1xmPJIHLc1A2xsUb-DOUBKcrUOwTaaWjZWWoQzbKyi5Km8aer9mVUIf4X7T_tQ-gx_N48pu6k8DplrMWcnYmlRJfqdhf66x7iORF9Z9ZLeLURRukRDtfNVX54RkEXLT1fSpjIo650XCRuOx6ZR38dH9tFVkLp_g_i2Wtry6dedzHHiUm9JVMfkVobKKeen8oiuPMfgbN15RBbh9tHXDqaQ0cc0zsl6bCu90bCTi2uGmt2IBLhJMYvwcTNablEjYXQ1jGWC60mq7gZ2Cdsyq3CWEwOCK1EiIhb4NTNxtj8ESJvVVDnk4F6Xq2ayxBrpPhXFqHB9WbW5QNjqkrDfFKiiqu2yJsCYvKEyl-2PJ-qec-ReMmIR6cqyAY-v3LXJxzax0W092i0CUVc8LRt9Wh4dOIEQ3huAM1nPI8OezFFnrn6Czops46XSnlUIbwMAxLFMjInrV_dQoJvDTbfb_YfU.qgBDadO__Pwv5I4rWIQXmg/test_df.csv","fileType":".csv"},{"kernelSessionId":111433538,"kernelId":32251001,"name":"train_df.csv","contentLength":460983,"fullPath":"train_df.csv","downloadUrl":"https://www.kaggleusercontent.com/kf/111433538/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..9HgfAqEkeZ71bv58Dh4jyA.QZ5ywicyTW4pDd8fRdBzgCY8S4YGe3NKxRFacJt05eGASpisnvuo_3SqjVEgV9TpnKxBmsdOd508R6QVvwVRB4WH85yn44rCcDbwkEN_2cegUgwGsKYE1xFcF0RKk4-OTKLKf_7ZHeRkgnsHErpHriy1ufK8_nAb_3Udk1v1IC5hIWIVT5JasYDiewNmtXBa3N272Yt3ql0vMdiZYj3VLKiJo8wZT29jCIt9cILKd5lfYH3C_gOFk3_bTrXrNBJ7ZhAz62RiItNA9tiQGEplVVN99BXDKbWookl2-2VU8fUO3BfPHSDpzrMrg8kbIccTNYPRDbs1BQm-59dzPKDgq0gUpDjx4peJleYRqd2oO7W9fqULCEWhrNVM9LExZmbm2niwNwNzukH_JmXIF3YiQNYuTaI4hKlPaxQaCqQ3OVj8f91h8a5LOXlaJA4z3F8qpWC098b5ccEt7rBR1H08L4LSiy4sH-J-mg8R-UmGqmemkd2R_eiJ-psVOGDFMI5faTmX6ENlj0aXgIX5owIveVsOIxtvsX-JT9q1KkLbz3zgJPO5X9sKOFPHlhW0G34vNBU8EsnA7c8wGmLeTz6qxOw4hVmt6EnlIzbHgqUqJUkop2Bq8M8VM8EZuH52Cm_2BQU1I-ISCZFvl4RmkiFnz3CPRQBLppMjdOql1-TOpQY.hnyyzJOPmfstxaLFrsTshQ/train_df.csv","fileType":".csv"}],"ouputFilesOwnerInfo":{"kernel":{"kernelId":32251001,"kernelVersionId":111433538,"scope":"javohirtoshqorgonov/house-price"}},"dataSources":[{"sourceId":5407,"databundleVersionId":868283,"mountSlug":"house-prices-advanced-regression-techniques"}],"renderableDataSources":[{"reference":{"sourceId":5407,"mountSlug":"house-prices-advanced-regression-techniques"},"name":"House Prices - Advanced Regression Techniques","dataSourceUrl":"/competitions/house-prices-advanced-regression-techniques","thumbnailUrl":"https://storage.googleapis.com/kaggle-competitions/kaggle/5407/logos/thumb76_76.png"}],"versions":[{"id":111433538,"isNotebook":true,"languageName":"Python","lastRunTime":"2022-11-19T05:10:52.717Z","linesInsertedFromPrevious":174,"runInfo":{"dockerfileUrl":"https://github.com/Kaggle/docker-python@sha256:b6e76e491faf320ee0199256d68e26763370b8fd5a86b19b4780ea9b306d85cf/blob/master/Dockerfile","dockerHubUrl":"https://registry.hub.docker.com/u/kaggle/python@sha256:b6e76e491faf320ee0199256d68e26763370b8fd5a86b19b4780ea9b306d85cf/","dockerImageId":"sha256:82b8af744dda536c89f33031ba085a3a5370bb3d8fff8670ac6de1c5b8972330","dockerImageName":"gcr.io/kaggle-images/python@sha256:b6e76e491faf320ee0199256d68e26763370b8fd5a86b19b4780ea9b306d85cf","isValidStatus":true,"runTimeSeconds":25.2202456,"succeeded":true,"usedAllSpace":false},"status":"COMPLETE","title":"house price","url":"/javohirtoshqorgonov/house-price?scriptVersionId=111433538","versionNumber":1,"hasVersionNumber":true,"versionType":"BATCH","userPlan":"USER_PLAN_FREE"}],"downloadAllFilesUrl":"/code/svzip/111433538","menuLinks":[{"href":"/code/javohirtoshqorgonov/house-price/code","tab":"code","text":"Code","title":"Code"},{"href":"/code/javohirtoshqorgonov/house-price/notebook","tab":"notebook","text":"Notebook","title":"Notebook"},{"href":"/code/javohirtoshqorgonov/house-price/execution","showOnMobile":false,"tab":"execution","text":"Execution Info","title":"Execution Info"},{"href":"/code/javohirtoshqorgonov/house-price/log","showOnMobile":false,"tab":"log","text":"Log","title":"Log"},{"count":0,"href":"/code/javohirtoshqorgonov/house-price/data","tab":"data","text":"Input","title":"Input"},{"href":"/code/javohirtoshqorgonov/house-price/output","showOnMobile":false,"tab":"output","text":"Output","title":"Output"},{"count":0,"href":"/code/javohirtoshqorgonov/house-price/comments","showZeroCountExplicitly":true,"tab":"comments","text":"Comments","title":"Comments"}],"rightMenuLinks":[{"href":"/code/fork-version/111433538","text":"Fork Notebook","title":"Fork Notebook"}],"callToAction":{"href":"/javohirtoshqorgonov/house-price/edit","text":"Edit Notebook","title":"Edit Notebook"},"voteButton":{"totalVotes":1,"medalVotes":1,"hasAlreadyVotedUp":true,"canUpvote":true,"voters":[{"id":10918030,"displayName":"Javohir Toshqorgonov","userName":"javohirtoshqorgonov","thumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","profileUrl":"/javohirtoshqorgonov","performanceTier":"CONTRIBUTOR"}],"currentUserInfo":{"id":10918030,"displayName":"Javohir Toshqorgonov","userName":"javohirtoshqorgonov","thumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","profileUrl":"/javohirtoshqorgonov","performanceTier":"CONTRIBUTOR"},"showVoters":true,"alwaysShowVoters":true,"kernelId":32251001},"canWrite":true,"canAdminister":true,"showSharingControls":true,"moderationStatus":"PRIVATED_MODERATION_STATUS_NO_ABUSE","@wf": "Kernels.GetKernelViewModelResponseWireFormat3"});performance && performance.mark && performance.mark("KernelViewerMaterialContainer.componentCouldBootstrap");</script>
+
+<form action="/code/javohirtoshqorgonov/house-price" id="__AjaxAntiForgeryForm" method="post"><input name="X-XSRF-TOKEN" type="hidden" value="CfDJ8Gm7kp8NARJBjtS2astAKvRREBubV0X9UFpmS9IT6V-2vJaPnB6VqNZr8b2j0nvqi7Li6pdF2ryiHa9hIercLxfLKZ4DCax-qUABfyiu0YHYP1AITCj-QvDe63S3FbsFfXKGpsepVVhPFkLUVW_w-qU" /></form>
+<script nonce="Fkc46lXSp1XMU/qdga0KiA==" type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+    preferredFont: "TeX",
+    availableFonts: ["STIX", "TeX"],
+    linebreaks: {
+    automatic: true
+    },
+    EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+    inlineMath: [["\\(", "\\)"], ["\\\\(", "\\\\)"]],
+    displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+    processEscapes: true,
+    ignoreClass: "tex2jax_ignore|dno"
+    },
+    TeX: {
+    noUndefined: {
+    attributes: {
+    mathcolor: "red",
+    mathbackground: "#FFEEEE",
+    mathsize: "90%"
+    }
+    }
+    },
+    Macros: {
+    href: "{}"
+    },
+    skipStartupTypeset: true,
+    messageStyle: "none",
+    extensions: ["Safe.js"],
+    });
+</script>
+<script type="text/javascript" nonce="Fkc46lXSp1XMU/qdga0KiA==">
+  window.addEventListener("DOMContentLoaded", () => {
+    const head = document.getElementsByTagName("head")[0];
+    const useProdHosts = ["www.kaggle.com", "admin.kaggle.com"];
+    const subdomain = useProdHosts.includes(window.location.hostname) ? "www" : "staging";
+
+    const lib = document.createElement("script");
+    lib.type = "text/javascript";
+    lib.src = `https://${subdomain}.kaggleusercontent.com/static/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML`;
+    head.appendChild(lib);
+  });
+</script>
+
+
+</div>
+
+
+
+    <!-- Cheers, web-5f94dd9d97-5rzc2p. -->
+
+  </main>
+</body>
+
+</html>
